@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+          function removeElement() {
+            var mode = "removeresident";
+            var floor = document.getElementById("m_floor").value;
+            var door = document.getElementById("m_door_number").value;
+
+            location.href='removeresident.html/?mode=' + mode + '&floor=' + floor + '&door=' + door;
+          }
+          </script>
+    </head>
+
+    <body>
+        <h2 class="title">Remove Resident</h2>
+
+        <table>
+            <tr>
+              <td>
+                <button class="button" onclick="location.href='residents.html'">Back</button>
+              </td>
+            </tr>
+          </table>
+
+        <div class="inputfield">
+            <label>Floor</label><br>
+            <input id="m_floor" type="text" required="required"/><br>
+
+            <label>Door number</label><br>
+            <input id="m_door_number" type="text" required="required"/><br><br><br>
+
+            <p id="m_information"></p>
+            <button class="button" onclick="removeElement()">Remove</button>
+        </div>
+    </body>
+</html>
