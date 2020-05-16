@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+          function addElement() {
+            var mode = "addresident";
+            var name = document.getElementById("m_name").value;
+            var balance = document.getElementById("m_balance").value;
+            var floor = document.getElementById("m_floor").value;
+            var door = document.getElementById("m_door_number").value;
+
+            if(floor > 4 || floor < 0) {
+              document.getElementById('m_information').innerHTML = "Invalid floor";
+              return;
+            }
+            if(balance < 0 ) {
+              document.getElementById('m_information').innerHTML = "Invalid balance";
+              return;
+            }
+
+            location.href='addresident.html/?mode=' + mode + '&name=' + name + '&balance=' + balance + '&floor=' + floor + '&door=' + door;
+          }
+          </script>
+    </head>
+
+    <body>
+        <h2 class="title">New Flat</h2>
+
+        <table>
+            <tr>
+              <td>
+                <button class="button" onclick="location.href='residents.html'">Back</button>
+              </td>
+            </tr>
+          </table>
+
+        <div class="inputfield">
+            <label>Name</label><br>
+            <input id="m_name" type="text" required="required"/><br>
+
+            <label>Balance</label><br>
+            <input id="m_balance" type="text" required="required"/><br>
+
+            <label>Floor</label><br>
+            <input id="m_floor" type="text" required="required"/><br>
+
+            <label>Door number</label><br>
+            <input id="m_door_number" type="text" required="required"/><br><br><br>
+
+            <p id="m_information"></p>
+            <button class="button" onclick="addElement()">Add</button>
+        </div>
+    </body>
+</html>

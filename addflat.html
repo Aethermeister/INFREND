@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+          function addElement() {
+            var mode = "addflat";
+            var floor = document.getElementById("m_floor").value;
+            var door = document.getElementById("m_door_number").value;
+            var area = document.getElementById("m_area").value;
+            var space = document.getElementById("m_space").value;
+
+            if(floor > 4 || floor < 0) {
+              document.getElementById('m_information').innerHTML = "Invalid floor";
+              return;
+            }
+
+            location.href='addflat.html/?mode=' + mode + '&floor=' + floor + '&door=' + door + '&area=' + area + '&space=' + space;
+          }
+          </script>
+    </head>
+
+    <body>
+        <h2 class="title">New Flat</h2>
+
+        <table>
+            <tr>
+              <td>
+                <button class="button" onclick="location.href='flats.html'">Back</button>
+              </td>
+            </tr>
+          </table>
+
+        <div class="inputfield">
+            <label>Floor</label><br>
+            <input id="m_floor" type="text" required="required"/><br>
+
+            <label>Door number</label><br>
+            <input id="m_door_number" type="text" required="required"/><br>
+
+            <label>Area</label><br>
+            <input id="m_area" type="text" required="required"/><br>
+
+            <label>Space</label><br>
+            <input id="m_space" type="text" required="required"/><br><br><br>
+
+            <p id="m_information"></p>
+            <button class="button" onclick="addElement()">Add</button>
+        </div>
+    </body>
+</html>
